@@ -230,7 +230,8 @@ if (locals.action) {
 		"reservationNumber":     "<%- event.affair %>",
 		"underName": {
 		  "@type":               "Person",
-		  "name":                "<%- event.user %>"
+		  "name":                "<%- event.user %>",
+		  "mail":                "<%- event.mail %>"
 		},
 		"reservationFor": {
 		  "@type":               "Event",
@@ -356,6 +357,7 @@ if (locals.action) {
 								</td>
 								<td align="center">
 									<p><span itemprop="name"><%- event.user %></span></p>
+									<p><span itemprop="mail"><%- event.mail %></span></p>
 								</td>
 							</tr>
 							<tr>
