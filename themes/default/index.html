@@ -347,6 +347,28 @@ if (locals.action) {
                         }
                       }
                       </script>
+					  <div itemscope itemtype="http://schema.org/EventReservation">
+						<meta itemprop="reservationNumber" content="<%- event.affair %>"/>
+						<link itemprop="reservationStatus" href="http://schema.org/Confirmed"/>
+						<div itemprop="underName" itemscope itemtype="http://schema.org/Person">
+							<meta itemprop="name" content="<%- event.user %>"/>
+						</div>
+						<div itemprop="reservationFor" itemscope itemtype="http://schema.org/Event">
+							<meta itemprop="name" content="<%- event.name %>"/>
+							<meta itemprop="startDate" content="<%- event.dateBegin %>"/>
+							<meta itemprop="endDate" content="<%- event.dateEnd %>"/>
+							<div itemprop="location" itemscope itemtype="http://schema.org/Place">
+								<meta itemprop="name" content="AT&T Park"/>
+								<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+									<meta itemprop="streetAddress" content="<%- event.street %>"/>
+									<meta itemprop="addressLocality" content="<%- event.city %>"/>
+									<meta itemprop="addressRegion" content="<%- event.state %>"/>
+									<meta itemprop="postalCode" content="<%- event.postcode %>"/>
+									<meta itemprop="addressCountry" content="<%- event.country %>"/>
+								</div>
+							</div>
+						</div>
+					</div>
                     <% } %>
 
                     <!-- Support for Gmail Go-To Actions -->
