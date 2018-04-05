@@ -317,6 +317,38 @@ if (locals.action) {
                       </table>
                     <% } %>
 
+                    <% if (locals.event) { %>
+                      <script type="application/ld+json">
+                      {
+                        "@context":              "http://schema.org",
+                        "@type":                 "EventReservation",
+                        "reservationNumber":     "<%- event.affair %>",
+                        "underName": {
+                          "@type":               "Person",
+                          "name":                "<%- event.user %>"
+                        },
+                        "reservationFor": {
+                          "@type":               "Event",
+                          "name":                "<%- event.name %>",
+                          "startDate":           "<%- event.dateBegin %>",
+                          "endDate":             "<%- event.dateEnd %>",
+                          "location": {
+                            "@type":             "Place",
+                            "name":              "<%- event.name %>",
+                            "address": {
+                              "@type":           "PostalAddress",
+                              "streetAddress":   "<%- event.street %>",
+                              "addressLocality": "<%- event.city %>",
+                              "addressRegion":   "<%- event.state %>",
+                              "postalCode":      "<%- event.postcode %>",
+                              "addressCountry":  "<%- event.country %>"
+                            }
+                          }
+                        }
+                      }
+                      </script>
+                    <% } %>
+
                     <!-- Support for Gmail Go-To Actions -->
                     <% if (locals.goToAction) { %>
                       <script type="application/ld+json">
