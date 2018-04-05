@@ -349,28 +349,51 @@ if (locals.action) {
                     <% } %>
 
                     <% if (locals.event) { %>
-					  <div itemscope itemtype="http://schema.org/EventReservation">
-						<meta itemprop="reservationNumber" content="<%- event.affair %>"/>
-						<link itemprop="reservationStatus" href="http://schema.org/Confirmed"/>
-						<div itemprop="underName" itemscope itemtype="http://schema.org/Person">
-							<meta itemprop="name" content="<%- event.user %>"/>
-						</div>
-						<div itemprop="reservationFor" itemscope itemtype="http://schema.org/Event">
-							<meta itemprop="name" content="<%- event.name %>"/>
-							<meta itemprop="startDate" content="<%- event.dateBegin %>"/>
-							<meta itemprop="endDate" content="<%- event.dateEnd %>"/>
-							<div itemprop="location" itemscope itemtype="http://schema.org/Place">
-								<meta itemprop="name" content="AT&T Park"/>
-								<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-									<meta itemprop="streetAddress" content="<%- event.street %>"/>
-									<meta itemprop="addressLocality" content="<%- event.city %>"/>
-									<meta itemprop="addressRegion" content="<%- event.state %>"/>
-									<meta itemprop="postalCode" content="<%- event.postcode %>"/>
-									<meta itemprop="addressCountry" content="<%- event.country %>"/>
-								</div>
-							</div>
-						</div>
-					</div>
+						<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td align="center">
+									<p>Numéro d'Affaire</p>
+								</td>
+								<td align="center">
+									<p><%- event.affair %></p>
+								</td>
+							  </td>
+							</tr>
+							<tr>
+								<td align="center">
+									<p>Société</p>
+								</td>
+								<td align="center">
+									<p><%- event.name %></p>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<p>Date de Début</p>
+								</td>
+								<td align="center">
+									<p><%- event.dateBegin %></p>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<p>Date de Fin</p>
+								</td>
+								<td align="center">
+									<p><%- event.dateEnd %></p>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<p>Adresse</p>
+								</td>
+								<td align="center">
+									<p><%- event.street %></p>
+									<p><%- event.postcode %> <%- event.city %></p>
+									<p><%- event.country %></p>
+								</td>
+							</tr>
+						</table>
                     <% } %>
 
                     <!-- Support for Gmail Go-To Actions -->
