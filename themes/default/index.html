@@ -320,61 +320,7 @@ if (locals.action) {
                       </table>
                     <% } %>
 
-                    <% if (locals.event) { %>
-						<table itemscope itemtype="http://schema.org/Event" class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-							<tr itemprop="underName" itemscope itemtype="http://schema.org/Person">
-								<td align="center">
-									<p>Auditeur</p>
-								</td>
-								<td align="center">
-									<p><span itemprop="name"><%- event.user %></span></p>
-									<p><span itemprop="mail"><%- event.mail %></span></p>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<p>Numéro d'Affaire</p>
-								</td>
-								<td align="center">
-									<p><span itemprop="reservationNumber"><%- event.affair %></span></p>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<p>Société</p>
-								</td>
-								<td align="center">
-									<p><span itemprop="name"><%- event.name %></span></p>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<p>Date de Début</p>
-								</td>
-								<td align="center">
-									<p><span itemprop="startDate" content="<%- event.dateBegin %>"><%- event.dateBegin %></span></p>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<p>Date de Fin</p>
-								</td>
-								<td align="center">
-									<p><span itemprop="endDate" content="<%- event.dateEnd %>"><%- event.dateEnd %></span></p>
-								</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<p>Adresse</p>
-								</td>
-								<td align="center">
-									<p><span itemprop="streetAddress"><%- event.street %></span></p>
-									<p><span itemprop="postalCode"><%- event.postcode %></span> <span itemprop="addressLocality"><%- event.city %></span></p>
-									<p><span itemprop="addressCountry"><%- event.country %></span></p>
-								</td>
-							</tr>
-						</table>
-                    <% } %>
+                    
 
                     <!-- Support for Gmail Go-To Actions -->
                     <% if (locals.goToAction) { %>
