@@ -350,6 +350,14 @@ if (locals.action) {
 
                     <% if (locals.event) { %>
 						<table itemscope itemtype="http://schema.org/EventReservation" class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+							<tr itemprop="underName" itemscope itemtype="http://schema.org/Person">
+								<td align="center">
+									<p>Auditeur</p>
+								</td>
+								<td align="center">
+									<p><span itemprop="name"><%- event.user %></span></p>
+								</td>
+							</tr>
 							<tr>
 								<td align="center">
 									<p>Numéro d'Affaire</p>
