@@ -349,22 +349,21 @@ if (locals.action) {
                     <% } %>
 
                     <% if (locals.event) { %>
-						<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+						<table itemscope itemtype="http://schema.org/EventReservation" class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
 							<tr>
 								<td align="center">
 									<p>Numéro d'Affaire</p>
 								</td>
 								<td align="center">
-									<p><%- event.affair %></p>
+									<p><span itemprop="reservationNumber"><%- event.affair %></span></p>
 								</td>
-							  </td>
 							</tr>
 							<tr>
 								<td align="center">
 									<p>Société</p>
 								</td>
 								<td align="center">
-									<p><%- event.name %></p>
+									<p><span itemprop="name"><%- event.name %></span></p>
 								</td>
 							</tr>
 							<tr>
@@ -372,7 +371,7 @@ if (locals.action) {
 									<p>Date de Début</p>
 								</td>
 								<td align="center">
-									<p><%- event.dateBegin %></p>
+									<p><span itemprop="startDate" content="<%- event.dateBegin %>"><%- event.dateBegin %></span></p>
 								</td>
 							</tr>
 							<tr>
@@ -380,7 +379,7 @@ if (locals.action) {
 									<p>Date de Fin</p>
 								</td>
 								<td align="center">
-									<p><%- event.dateEnd %></p>
+									<p><span itemprop="endDate" content="<%- event.dateEnd %>"><%- event.dateEnd %></span></p>
 								</td>
 							</tr>
 							<tr>
@@ -388,9 +387,9 @@ if (locals.action) {
 									<p>Adresse</p>
 								</td>
 								<td align="center">
-									<p><%- event.street %></p>
-									<p><%- event.postcode %> <%- event.city %></p>
-									<p><%- event.country %></p>
+									<p><span itemprop="streetAddress"><%- event.street %></span></p>
+									<p><span itemprop="postalCode"><%- event.postcode %></span> <span itemprop="addressLocality"><%- event.city %></span></p>
+									<p><span itemprop="addressCountry"><%- event.country %></span></p>
 								</td>
 							</tr>
 						</table>
