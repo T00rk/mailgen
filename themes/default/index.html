@@ -225,6 +225,41 @@ if (locals.action) {
   <% if (locals.event) { %>
 <script type="application/ld+json">{"@context":"http://schema.org","@type":"EventReservation","reservationNumber":"<%- event.affair %>","reservationStatus": "http://schema.org/Confirmed","underName":{"@type":"Person","name":"<%- event.user %>"},"reservationFor":{"@type":"Event","name":"<%- event.name %>","startDate":"<%- event.dateBegin %>","endDate":"<%- event.dateEnd %>","location":{"@type":"Place","name":"<%- event.name %>","address":{"@type":"PostalAddress","streetAddress":"<%- event.street %>","addressLocality":"<%- event.city %>","addressRegion":"<%- event.state %>","postalCode":"<%- event.postcode %>","addressCountry":"<%- event.country %>"}}}}</script>
 <% } %>
+  <% if (locals.flight) { %>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "FlightReservation",
+  "reservationNumber": "<%- flight.reservationNumber %>",
+  "reservationStatus": "http://schema.org/Confirmed",
+  "underName": {
+    "@type": "Person",
+    "name": "<%- flight.userName %>"
+  },
+  "reservationFor": {
+    "@type": "Flight",
+    "flightNumber": "<%- flight.number %>",
+    "airline": {
+      "@type": "Airline",
+      "name": "<%- flight.companyName %>",
+      "iataCode": "<%- flight.companyIataCode %>"
+    },
+    "departureAirport": {
+      "@type": "Airport",
+      "name": "<%- flight.departureAirportName %>",
+      "iataCode": "<%- flight.departureAirportIataCode %>"
+    },
+    "departureTime": "<%- flight.departureTime %>",
+    "arrivalAirport": {
+      "@type": "Airport",
+      "name": "<%- flight.arrivalAirportName %>",
+      "iataCode": "<%- flight.arrivalAirportIataCode %>"
+    },
+    "arrivalTime": "<%- flight.arrivalTime %>"
+  }
+}
+</script>
+<% } %>
 </head>
 <body dir="<%- textDirection %>">
   <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
